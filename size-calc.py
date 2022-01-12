@@ -17,4 +17,4 @@ while count < 35000: #change the numer to the id of the newest upload
             size_bytes = torrent_info['response']['torrent']['size']
             size = size + size_bytes
             torrent_size = hurry.filesize.size(size)
-            print(f'Total size up to https://bemaniso.ws/torrents.php?torrentid={count}  :  {torrent_size} , {size}B')
+            print(f'Total size up to https://{endpoint}/torrents.php?torrentid={count}  :  {torrent_size} , {size}B')
