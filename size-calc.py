@@ -2,13 +2,14 @@ import requests
 import json
 import hurry.filesize
 
+endpoint = 'example.com'
 cookie = 'session='
 headers = {'cookie': cookie}
 count = 1
 size = 0
 while count < 35000: #change the numer to the id of the newest upload
     count = count + 1
-    info_url = 'https://bemaniso.ws/ajax.php?action=torrent&id=' + str(count)
+    info_url = f'https://{endpoint}/ajax.php?action=torrent&id=' + str(count)
     torrent_status = requests.get(info_url, headers=headers)
     torrent_info = json.loads(torrent_status.content)
     status = torrent_info['status']
